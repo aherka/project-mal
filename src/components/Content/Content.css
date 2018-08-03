@@ -1,0 +1,15 @@
+.Content {
+    float: right;
+    height: 100%;
+    width: calc(100% - 180px);
+
+    padding: 20px;
+    transition: width 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+@media (max-width: 840px) {
+    .Content {
+        width: calc(100% - 50px);
+    }
+}
+
