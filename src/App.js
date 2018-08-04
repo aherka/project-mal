@@ -6,11 +6,23 @@ import Navbar from './components/Navbar';
 import Content from './components/Content';
 
 class App extends Component {
+    
+    state = {
+        selectedContent: 'home',
+    }
+
+
+    changeSelectedContent(newContent) {
+        this.setState({selectedContent: newContent});
+    }
+
+
+
     render() {
         return (
             <div className="App">
-                <Navbar />
-                <Content />
+                <Navbar onChangeNav={newContent => this.changeSelectedContent(newContent)} selectedContent={this.state.selectedContent}/>
+                <Content selectedContent={this.state.selectedContent}/>
             </div>
         );
     }
